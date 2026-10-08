@@ -1,0 +1,4 @@
+Rank,Approach,SynCom_ID,Strains,Mean_P_Beneficial,Min_P_Beneficial,Diversity_Score,Bio_Trait_Coverage,Eng_Feature_Coverage,Score_Used,Strain_1,P_Ben_1,Strain_2,P_Ben_2,Strain_3,P_Ben_3,Strain_4,P_Ben_4,Strain_5,P_Ben_5
+1,D_TraitCoverage,D_TraitCoverage_SC1,107 | 29P | 22 | 36P | 126,0.716,0.5527,2.3541,14/14,9/10,1.0102,107,0.8258,29P,0.7569,22,0.7477,36P,0.6969,126,0.5527
+2,D_TraitCoverage,D_TraitCoverage_SC2,157 | 29P | 36P | 57 | 126,0.6746,0.5527,2.3623,14/14,9/10,1.0101,157,0.7838,29P,0.7569,36P,0.6969,57,0.5826,126,0.5527
+3,D_TraitCoverage,D_TraitCoverage_SC3,502 | 29P | 36P | 126 | 54,0.674,0.5408,2.3402,14/14,9/10,1.01,502,0.8227,29P,0.7569,36P,0.6969,126,0.5527,54,0.5408

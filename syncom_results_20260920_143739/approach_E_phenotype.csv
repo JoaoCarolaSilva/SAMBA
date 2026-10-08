@@ -1,0 +1,4 @@
+Rank,Approach,SynCom_ID,Strains,Mean_Drought_Score,Min_Drought_Score,Score_Used,Strain_1,DroughtScore_1,Strain_2,DroughtScore_2,Strain_3,DroughtScore_3,Strain_4,DroughtScore_4,Strain_5,DroughtScore_5
+1,E_Phenotype,E_Phenotype_SC1,53 | 138 | 139 | 153 | 1002,0.5824,0.4083,0.5824,53,0.4497,138,0.7678,139,0.4083,153,0.5811,1002,0.7052
+2,E_Phenotype,E_Phenotype_SC2,138 | 153 | 502 | 1002 | 33P,0.562,0.3741,0.562,138,0.7678,153,0.5811,502,0.3818,1002,0.7052,33P,0.3741
+3,E_Phenotype,E_Phenotype_SC3,52 | 138 | 153 | 1002 | 34P,0.5524,0.3377,0.5524,52,0.3377,138,0.7678,153,0.5811,1002,0.7052,34P,0.3703

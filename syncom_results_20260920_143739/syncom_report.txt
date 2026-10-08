@@ -1,0 +1,73 @@
+======================================================================
+SynCom Designer Report — Final Version
+======================================================================
+
+Classifier:            Classifier_results_20260920_115035
+Candidates (A-D):      76 predicted Beneficial
+Pool (E, Random):      124 all strains
+SynCom size (k):       5
+SynComs/approach:      3
+Min strain diff:       2
+Inter-approach unique: Yes (A/B/C/D)
+Total combinations:    18,474,840 (A-D) | 225,150,024 (E)
+
+
+────────────────────────────────────────────────────────────
+Approach A — Elite
+────────────────────────────────────────────────────────────
+  A_Elite_SC1:  33P | 10P | 26P | 107 | 502
+    Mean P=0.8806  Min P=0.8227  Div=1.6758  Bio=9/14  Eng=8/10
+  A_Elite_SC2:  33P | 10P | 26P | 157 | 29P
+    Mean P=0.8591  Min P=0.7569  Div=1.7929  Bio=11/14  Eng=9/10
+  A_Elite_SC3:  33P | 10P | 26P | 81 | 35P
+    Mean P=0.8500  Min P=0.7477  Div=1.1618  Bio=9/14  Eng=8/10
+
+────────────────────────────────────────────────────────────
+Approach B — Feature Coverage
+────────────────────────────────────────────────────────────
+  B_FeatCoverage_SC1:  107 | 502 | 157 | 29P | 36P
+    Mean P=0.7772  Min P=0.6969  Div=2.3988  Bio=11/14  Eng=9/10
+  B_FeatCoverage_SC2:  107 | 157 | 29P | 138 | 6
+    Mean P=0.7372  Min P=0.5719  Div=2.4169  Bio=11/14  Eng=9/10
+  B_FeatCoverage_SC3:  107 | 29P | 36P | 6 | 25
+    Mean P=0.6703  Min P=0.5000  Div=2.4534  Bio=10/14  Eng=9/10
+
+────────────────────────────────────────────────────────────
+Approach C — Balanced
+────────────────────────────────────────────────────────────
+  C_Balanced_SC1:  33P | 10P | 26P | 107 | 157
+    Mean P=0.8729  Min P=0.7838  Div=1.9810  Bio=10/14  Eng=9/10
+  C_Balanced_SC2:  33P | 107 | 502 | 157 | 29P
+    Mean P=0.8281  Min P=0.7569  Div=2.2304  Bio=10/14  Eng=9/10
+  C_Balanced_SC3:  10P | 107 | 157 | 29P | 138
+    Mean P=0.8112  Min P=0.7477  Div=2.2706  Bio=12/14  Eng=9/10
+
+────────────────────────────────────────────────────────────
+Approach D — Trait Coverage
+────────────────────────────────────────────────────────────
+  D_TraitCoverage_SC1:  107 | 29P | 22 | 36P | 126
+    Mean P=0.7160  Min P=0.5527  Div=2.3541  Bio=14/14  Eng=9/10
+  D_TraitCoverage_SC2:  157 | 29P | 36P | 57 | 126
+    Mean P=0.6746  Min P=0.5527  Div=2.3623  Bio=14/14  Eng=9/10
+  D_TraitCoverage_SC3:  502 | 29P | 36P | 126 | 54
+    Mean P=0.6740  Min P=0.5408  Div=2.3402  Bio=14/14  Eng=9/10
+
+────────────────────────────────────────────────────────────
+Approach E — Phenotype-informed (positive control)
+────────────────────────────────────────────────────────────
+  E_Phenotype_SC1:  53 | 138 | 139 | 153 | 1002
+    Mean Drought Score=0.5824  Min=0.4083
+  E_Phenotype_SC2:  138 | 153 | 502 | 1002 | 33P
+    Mean Drought Score=0.5620  Min=0.3741
+  E_Phenotype_SC3:  52 | 138 | 153 | 1002 | 34P
+    Mean Drought Score=0.5524  Min=0.3377
+
+────────────────────────────────────────────────────────────
+Approach F — Random (negative control)
+────────────────────────────────────────────────────────────
+  F_Random_SC1:  12 | 148 | 86 | 9P | 1001
+    Mean Drought Score=-0.1461
+  F_Random_SC2:  13 | 36P | 504 | 1002 | 113
+    Mean Drought Score=0.2240
+  F_Random_SC3:  1008 | 68 | 87 | 30 | 107
+    Mean Drought Score=-0.0613

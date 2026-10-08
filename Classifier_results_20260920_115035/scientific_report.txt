@@ -1,0 +1,113 @@
+======================================================================
+CLASSIFIER MODEL - Scientific Report
+Drought Phenotype Prediction from Biochemical Traits
+======================================================================
+
+1. DATASET
+   Samples: 124 | Features (final): 301
+   Target: Beneficial (voting, >10% above control in weighted majority of traits) vs Non-Beneficial
+   Weights: Length 40% / Weight 60%
+   Control: Shoot_Length=57.5, Root_Length=60.9, Shoot_Weight=13.0, Root_Weight=10.8
+   Classes: 63 non-beneficial / 61 beneficial (ratio 1.03)
+
+2. AUGMENTATION & FEATURE-COUNT GRID (joint search, SMOTE variants x N)
+       Strategy  N_Features   LOO_F1  LOO_AUC  Recall_1  Precision_1
+       SMOTE_k4         301 0.682989 0.682019  0.786885     0.648649
+       SMOTE_k3         301 0.675308 0.669529  0.770492     0.643836
+           None         301 0.666732 0.663804  0.770492     0.635135
+BorderlineSMOTE         301 0.658088 0.665105  0.770492     0.626667
+     SMOTETomek         301 0.624242 0.644809  0.754098     0.597403
+       SMOTE_k4         200 0.594135 0.597970  0.524590     0.603774
+       SMOTE_k3         200 0.594135 0.598751  0.524590     0.603774
+BorderlineSMOTE         200 0.586532 0.601093  0.524590     0.592593
+           None         200 0.586532 0.590164  0.524590     0.592593
+     SMOTETomek          50 0.570317 0.552433  0.508197     0.574074
+       SMOTE_k3          50 0.562696 0.529534  0.508197     0.563636
+BorderlineSMOTE          50 0.562696 0.528233  0.508197     0.563636
+       SMOTE_k4          50 0.562696 0.545147  0.508197     0.563636
+           None          50 0.562696 0.531095  0.508197     0.563636
+       SMOTEENN         301 0.562304 0.598491  0.737705     0.548780
+       SMOTE_k3         100 0.558893 0.543586  0.459016     0.571429
+           None         100 0.549865 0.541244  0.442623     0.562500
+BorderlineSMOTE         100 0.549865 0.539683  0.442623     0.562500
+       SMOTE_k4         100 0.549865 0.546448  0.442623     0.562500
+     SMOTETomek         200 0.531771 0.559979  0.508197     0.525424
+       SMOTEENN          50 0.517056 0.560239  0.360656     0.536585
+     SMOTETomek         100 0.512962 0.514702  0.442623     0.509434
+       SMOTEENN         100 0.500759 0.562061  0.393443     0.500000
+       SMOTEENN         200 0.451613 0.488421  0.459016     0.444444
+BorderlineSMOTE          20 0.403071 0.323705  0.426230     0.400000
+           None          20 0.386937 0.313817  0.409836     0.384615
+       SMOTEENN          10 0.384535 0.308353  0.327869     0.363636
+       SMOTE_k3          20 0.378992 0.309133  0.393443     0.375000
+       SMOTE_k4          20 0.370968 0.314338  0.377049     0.365079
+     SMOTETomek          10 0.362862 0.318761  0.360656     0.354839
+     SMOTETomek          20 0.361866 0.330211  0.327869     0.344828
+BorderlineSMOTE          30 0.352142 0.299506  0.426230     0.366197
+BorderlineSMOTE          10 0.346732 0.322144  0.344262     0.338710
+       SMOTEENN          20 0.346732 0.296123  0.344262     0.338710
+           None          10 0.346392 0.324226  0.327869     0.333333
+       SMOTEENN          30 0.338710 0.280510  0.344262     0.333333
+       SMOTE_k3          10 0.338538 0.324746  0.327869     0.327869
+       SMOTE_k4          10 0.338538 0.315899  0.327869     0.327869
+     SMOTETomek          30 0.335946 0.294301  0.409836     0.352113
+       SMOTE_k3          30 0.328505 0.282852  0.393443     0.342857
+       SMOTE_k4          30 0.328505 0.284153  0.393443     0.342857
+           None          30 0.320991 0.283893  0.377049     0.333333
+   Winner: SMOTE_k4 + N=301
+
+3. MODEL
+   ElasticNet (LogisticRegression saga + elasticnet penalty)
+   Fixed as final model: highest LOOCV F1 + near-zero overfit gap
+
+4. OPTUNA (1 trials)
+   Best CV F1: 0.6085
+   Params: {'C': 0.06348217329775487, 'l1_ratio': 0.3874420226870773}
+
+5. THRESHOLD
+   Method: OOF on training set (no leakage)
+   Selected: 0.50
+
+6. LOOCV RESULTS (PRIMARY)
+   F1=0.6907 | R1=0.8033 (49/61) | P1=0.6533 | AUC=0.6825
+                precision    recall  f1-score   support
+
+Non-Beneficial       0.76      0.59      0.66        63
+    Beneficial       0.65      0.80      0.72        61
+
+      accuracy                           0.69       124
+     macro avg       0.70      0.70      0.69       124
+  weighted avg       0.71      0.69      0.69       124
+
+7. TEST SET RESULTS (SECONDARY)
+   F1=0.6753 | R1=0.8333 | P1=0.6250 | TrainF1=0.6727 (gap=-0.0026)
+                precision    recall  f1-score   support
+
+Non-Beneficial       0.78      0.54      0.64        13
+    Beneficial       0.62      0.83      0.71        12
+
+      accuracy                           0.68        25
+     macro avg       0.70      0.69      0.68        25
+  weighted avg       0.70      0.68      0.67        25
+
+8. DEPLOYMENT STATS
+   TP=50 FP=26 FN=11 TN=37
+   Found 50/61 top performers (82%)
+
+9. TOP FEATURES (Permutation Importance)
+                                     Feature  Importance      Std
+        ratio_Glycine_Betaine_div_Polyamines    0.086197 0.023421
+                    ratio_Manganese_div_Zinc    0.072453 0.025309
+            ratio_Glycine_Betaine_div_Silica    0.049932 0.024238
+                ratio_Calcium_div_Polyamines    0.047972 0.020138
+              ratio_Manganese_div_Polyamines    0.040673 0.019698
+        trip_Antioxidants_x_Calcium_div_Zinc    0.039339 0.023780
+                    ratio_Silica_div_Calcium    0.037413 0.019690
+                 ratio_Silica_div_Polyamines    0.034895 0.023013
+                 ratio_Manganese_div_Calcium    0.027950 0.015090
+              ratio_Biofilm_div_Antioxidants    0.018636 0.013170
+           ratio_Auxins_div_Antioxidants_PEG    0.017710 0.008320
+trip_Glycine_Betaine_x_Manganese_div_Calcium    0.016926 0.011087
+ trip_Proline_PEG_x_Phosphate_div_Polyamines    0.015375 0.012930
+         trip_ACC_x_Manganese_div_Polyamines    0.014922 0.011352
+       ratio_Auxins_PEG_div_Antioxidants_PEG    0.014812 0.006590

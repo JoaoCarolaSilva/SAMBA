@@ -1,0 +1,4 @@
+Rank,Approach,SynCom_ID,Strains,Mean_Drought_Score,Score_Used,Strain_1,DroughtScore_1,P_Ben_1,Strain_2,DroughtScore_2,P_Ben_2,Strain_3,DroughtScore_3,P_Ben_3,Strain_4,DroughtScore_4,P_Ben_4,Strain_5,DroughtScore_5,P_Ben_5
+1,F_Random,F_Random_SC1,12 | 148 | 86 | 9P | 1001,-0.1461,random,12,-0.2726,0.5,148,-0.1941,0.2393,86,-0.0859,0.5,9P,-0.1556,0.4256,1001,-0.0221,0.5
+2,F_Random,F_Random_SC2,13 | 36P | 504 | 1002 | 113,0.224,random,13,0.1415,0.5,36P,0.0195,0.6969,504,0.1109,0.5,1002,0.7052,0.5,113,0.1431,0.5
+3,F_Random,F_Random_SC3,1008 | 68 | 87 | 30 | 107,-0.0613,random,1008,-0.0507,0.1194,68,-0.3164,0.5408,87,-0.1281,0.5,30,0.1494,0.5408,107,0.0395,0.8258

@@ -1,0 +1,76 @@
+TRIPLET FEATURE SCREENING REPORT
+============================================================
+
+Best sampler: BorderlineSMOTE
+
+Baseline CV F1 (284 features): 0.6204
+
+MI pre-filter: kept top 200 of 3542 candidates
+
+Sampler grid summary (best N per sampler):
+        Sampler  N_Triplets_Added  Total_Features      Label    CV_F1   CV_AUC  Recall_1
+BorderlineSMOTE                17             301 base+top17 0.658088 0.706740  0.770492
+       SMOTE_k3                15             299 base+top15 0.651389 0.706479  0.737705
+       SMOTE_k4                 8             292  base+top8 0.642838 0.701795  0.737705
+           None                10             294 base+top10 0.635175 0.678636  0.721311
+     SMOTETomek                 0             284       base 0.620350 0.672131  0.672131
+       SMOTEENN                20             304 base+top20 0.611995 0.636482  0.672131
+
+Top 30 triplets by Delta_F1 (5-fold CV, BorderlineSMOTE):
+        Sampler                                            Feature       F1  Delta_F1      AUC  Recall_1  Precision_1  MI_Score
+BorderlineSMOTE    trip_ACC_PEG_div_Proline_PEG_x_Antioxidants_PEG 0.644329  0.023978 0.685922  0.704918     0.623188  0.086183
+BorderlineSMOTE        trip_Proline_PEG_x_Phosphate_div_Polyamines 0.636506  0.016155 0.680458  0.688525     0.617647  0.078776
+BorderlineSMOTE            trip_Proline_PEG_x_Phosphate_div_Silica 0.635937  0.015586 0.685402  0.704918     0.614286  0.086765
+BorderlineSMOTE  trip_ACC_PEG_div_Antioxidants_PEG_x_Potassium_PEG 0.635937  0.015586 0.685662  0.704918     0.614286  0.090123
+BorderlineSMOTE                trip_ACC_x_Manganese_div_Polyamines 0.635175  0.014824 0.693729  0.721311     0.611111  0.081387
+BorderlineSMOTE      trip_Proline_x_Antioxidants_PEG_div_Phosphate 0.628646  0.008295 0.679157  0.672131     0.611940  0.099584
+BorderlineSMOTE           trip_Biofilm_PEG_x_Antioxidants_div_Zinc 0.628162  0.007811 0.683581  0.688525     0.608696  0.162722
+BorderlineSMOTE      trip_Biofilm_PEG_x_Antioxidants_div_Manganese 0.628162  0.007811 0.683581  0.688525     0.608696  0.121555
+BorderlineSMOTE        trip_Biofilm_PEG_x_Antioxidants_div_Calcium 0.628162  0.007811 0.685662  0.688525     0.608696  0.091436
+BorderlineSMOTE           trip_Biofilm_PEG_x_ACC_PEG_div_Phosphate 0.628162  0.007811 0.684101  0.688525     0.608696  0.091100
+BorderlineSMOTE      trip_Biofilm_PEG_div_Trehalose_x_Antioxidants 0.628162  0.007811 0.684361  0.688525     0.608696  0.086903
+BorderlineSMOTE     trip_Biofilm_PEG_x_Trehalose_PEG_div_Phosphate 0.628162  0.007811 0.683581  0.688525     0.608696  0.080961
+BorderlineSMOTE            trip_Biofilm_PEG_div_Auxins_x_Phosphate 0.628162  0.007811 0.684361  0.688525     0.608696  0.096911
+BorderlineSMOTE              trip_Auxins_div_Trehalose_x_Phosphate 0.628162  0.007811 0.685142  0.688525     0.608696  0.081042
+BorderlineSMOTE                trip_Biofilm_x_Auxins_div_Phosphate 0.628162  0.007811 0.684621  0.688525     0.608696  0.088068
+BorderlineSMOTE               trip_Antioxidants_x_Calcium_div_Zinc 0.627482  0.007131 0.693729  0.704918     0.605634  0.080916
+BorderlineSMOTE       trip_Glycine_Betaine_x_Manganese_div_Calcium 0.627482  0.007131 0.680458  0.704918     0.605634  0.117857
+BorderlineSMOTE                  trip_Biofilm_div_Auxins_x_Proline 0.620350  0.000000 0.678897  0.672131     0.602941  0.151523
+BorderlineSMOTE               trip_Auxins_PEG_x_Trehalose_div_Zinc 0.620350  0.000000 0.678376  0.672131     0.602941  0.150693
+BorderlineSMOTE    trip_Auxins_PEG_div_Glycine_Betaine_x_Manganese 0.620350  0.000000 0.678376  0.672131     0.602941  0.130448
+BorderlineSMOTE trip_Auxins_PEG_x_Nitrogen_PEG_div_Glycine_Betaine 0.620350  0.000000 0.678376  0.672131     0.602941  0.130303
+BorderlineSMOTE        trip_Auxins_PEG_div_Trehalose_PEG_x_Calcium 0.620350  0.000000 0.678376  0.672131     0.602941  0.130264
+BorderlineSMOTE        trip_Auxins_PEG_div_Proline_PEG_x_Potassium 0.620350  0.000000 0.678897  0.672131     0.602941  0.130043
+BorderlineSMOTE            trip_Auxins_PEG_div_Manganese_x_Calcium 0.620350  0.000000 0.678376  0.672131     0.602941  0.142932
+BorderlineSMOTE      trip_Auxins_PEG_div_Glycine_Betaine_x_Calcium 0.620350  0.000000 0.678376  0.672131     0.602941  0.129052
+BorderlineSMOTE         trip_Auxins_PEG_div_Antioxidants_x_Calcium 0.620350  0.000000 0.678376  0.672131     0.602941  0.127766
+BorderlineSMOTE           trip_Auxins_PEG_div_Calcium_x_Polyamines 0.620350  0.000000 0.678376  0.672131     0.602941  0.145915
+BorderlineSMOTE                 trip_Auxins_PEG_div_Calcium_x_Zinc 0.620350  0.000000 0.678376  0.672131     0.602941  0.146675
+BorderlineSMOTE              trip_Auxins_PEG_div_Polyamines_x_Zinc 0.620350  0.000000 0.678376  0.672131     0.602941  0.137333
+BorderlineSMOTE                 trip_Auxins_x_ACC_div_Nitrogen_PEG 0.620350  0.000000 0.678376  0.672131     0.602941  0.136449
+
+N-selection results (BorderlineSMOTE):
+        Sampler  N_Triplets_Added  Total_Features      Label    CV_F1   CV_AUC  Recall_1
+BorderlineSMOTE                17             301 base+top17 0.658088 0.706740  0.770492
+BorderlineSMOTE                10             294 base+top10 0.642838 0.695550  0.737705
+BorderlineSMOTE                 0             284       base 0.620350 0.678897  0.672131
+
+RECOMMENDATION: add 17 triplets -> 301 total features
+Features to add:
+  trip_ACC_PEG_div_Proline_PEG_x_Antioxidants_PEG
+  trip_Proline_PEG_x_Phosphate_div_Polyamines
+  trip_Proline_PEG_x_Phosphate_div_Silica
+  trip_ACC_PEG_div_Antioxidants_PEG_x_Potassium_PEG
+  trip_ACC_x_Manganese_div_Polyamines
+  trip_Proline_x_Antioxidants_PEG_div_Phosphate
+  trip_Biofilm_PEG_x_Antioxidants_div_Zinc
+  trip_Biofilm_PEG_x_Antioxidants_div_Manganese
+  trip_Biofilm_PEG_x_Antioxidants_div_Calcium
+  trip_Biofilm_PEG_x_ACC_PEG_div_Phosphate
+  trip_Biofilm_PEG_div_Trehalose_x_Antioxidants
+  trip_Biofilm_PEG_x_Trehalose_PEG_div_Phosphate
+  trip_Biofilm_PEG_div_Auxins_x_Phosphate
+  trip_Auxins_div_Trehalose_x_Phosphate
+  trip_Biofilm_x_Auxins_div_Phosphate
+  trip_Antioxidants_x_Calcium_div_Zinc
+  trip_Glycine_Betaine_x_Manganese_div_Calcium
