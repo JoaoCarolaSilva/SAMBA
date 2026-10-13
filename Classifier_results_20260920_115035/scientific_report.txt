@@ -65,7 +65,7 @@ BorderlineSMOTE          10 0.346732 0.322144  0.344262     0.338710
    Params: {'C': 0.06348217329775487, 'l1_ratio': 0.3874420226870773}
 
 5. THRESHOLD
-   Method: OOF on training set (no leakage)
+   Method: OOF on training set 
    Selected: 0.50
 
 6. LOOCV RESULTS (PRIMARY)
