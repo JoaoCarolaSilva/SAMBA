@@ -346,7 +346,7 @@ with open(f"{output_dir}/scientific_report.txt", "w", encoding="utf-8") as f:
             f"   Fixed as final model: highest LOOCV F1 + near-zero overfit gap\n\n")
     f.write(f"4. OPTUNA ({N_TRIALS} trials)\n   Best CV F1: {study.best_value:.4f}\n"
             f"   Params: {best_params}\n\n")
-    f.write(f"5. THRESHOLD\n   Method: OOF on training set (no leakage)\n"
+    f.write(f"5. THRESHOLD\n   Method: OOF on training set\n"
             f"   Selected: {final_threshold:.2f}\n\n")
     f.write(f"6. LOOCV RESULTS (PRIMARY)\n"
             f"   F1={final_f1:.4f} | R1={final_r1:.4f} ({int(final_r1*n_pos)}/{n_pos})"
